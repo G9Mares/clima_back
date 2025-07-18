@@ -3,6 +3,7 @@ from features.clima import routes as clima_router
 import os
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
+from mangum import Mangum
 
 load_dotenv()
 
@@ -10,6 +11,8 @@ VERSION = os.getenv("VERSION")
 
 app = FastAPI()
 app.include_router(router=clima_router.router)
+
+handdler = Mangum(app)
 
 app.add_middleware(
     CORSMiddleware,
