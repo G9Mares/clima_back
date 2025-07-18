@@ -12,7 +12,7 @@ class Postgres_Controller:
             db = 'mi_basedatos',
             ):
         
-        url = f'postgresql+psycopg2://{usuario}:{passw}@{host}:{puerto}/{db}'
+        url = f"mysql+pymysql://{usuario}:{passw}@{host}:{puerto}/{db}"
         self.engine = create_engine(url)
         self.create_session()
     

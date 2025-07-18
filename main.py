@@ -12,7 +12,7 @@ VERSION = os.getenv("VERSION")
 app = FastAPI()
 app.include_router(router=clima_router.router)
 
-handdler = Mangum(app)
+handler = Mangum(app)
 
 app.add_middleware(
     CORSMiddleware,

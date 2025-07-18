@@ -87,6 +87,8 @@ python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python app.py
+pip install --platform manylinux2014_x86_64 --target=package --implementation cp --python-version 3.13.5 --only-binary=:all: --upgrade pymysql
+
 ```
 Licencia
 MIT © 2025 - GMares
